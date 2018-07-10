@@ -1,2 +1,2 @@
-# Traval
+# Travel
 a vue project
