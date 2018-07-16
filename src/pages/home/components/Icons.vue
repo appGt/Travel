@@ -90,6 +90,7 @@ export default {
       width 25%
       height 0
       padding-bottom 25%
+      margin-top .2rem
       .icon-img
         position absolute
         top 0
