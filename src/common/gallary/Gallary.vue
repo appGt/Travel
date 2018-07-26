@@ -30,7 +30,7 @@ export default {
         pagination: '.swiper-pagination',
         paginationType: 'fraction',
         observeParents: true,
-        ovserver: true
+        observer: true
       }
     }
   },
