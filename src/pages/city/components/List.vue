@@ -12,13 +12,19 @@
       <div class="area">
         <div class="title border-topbottom">热门城市</div>
         <div class="button-list">
-          <div class="button-wrapper" v-for="item of hot" :key="item.id" @click="handleCityClick(item.name)">
+          <div
+            class="button-wrapper"
+            v-for="item of hot"
+            :key="item.id"
+            @click="handleCityClick(item.name)"
+          >
             <div class="button">{{item.name}}</div>
           </div>
         </div>
       </div>
-      <div class="area"
-        v-for="(item, key) of cities"
+      <div
+        class="area"
+        v-for="(item, key) in cities"
         :key="key"
         :ref="key"
       >
@@ -58,9 +64,6 @@ export default {
     },
     ...mapMutations(['changeCity'])
   },
-  mounted: function () {
-    this.scroll = new Bscroll(this.$refs.wrapper)
-  },
   watch: {
     letter () {
       if (this.letter) {
@@ -68,6 +71,9 @@ export default {
         this.scroll.scrollToElement(element)
       }
     }
+  },
+  mounted: function () {
+    this.scroll = new Bscroll(this.$refs.wrapper)
   }
 }
 </script>

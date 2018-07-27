@@ -3,7 +3,8 @@
     <detail-banner
       :sightName="sightName"
       :bannerImg="bannerImg"
-      :gallaryImgs="gallaryImgs"></detail-banner>
+      :gallaryImgs="gallaryImgs"
+    ></detail-banner>
     <detail-header></detail-header>
     <div class="content">
       <detail-list :list="list"></detail-list>
@@ -18,6 +19,11 @@ import DetailList from './components/List'
 import axios from 'axios'
 export default {
   name: 'Detail',
+  components: {
+    DetailBanner,
+    DetailHeader,
+    DetailList
+  },
   data () {
     return {
       sightName: '',
@@ -28,7 +34,7 @@ export default {
   },
   methods: {
     getDetailInfo () {
-      axios.get('/api/detail.json?', {
+      axios.get('/api/detail.json', {
         params: {
           id: this.$route.params.id
         }
@@ -47,11 +53,6 @@ export default {
   },
   mounted () {
     this.getDetailInfo()
-  },
-  components: {
-    DetailBanner,
-    DetailHeader,
-    DetailList
   }
 }
 </script>
